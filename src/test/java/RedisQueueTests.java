@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 @RunWith(JUnit4.class)
 public class RedisQueueTests {
@@ -14,7 +15,9 @@ public class RedisQueueTests {
 
     @BeforeClass
     public static void beforeTestCase() {
-        queue = new RedisQueue(CONNECTION_URI);
+        final HashMap<String, String> options = new HashMap<>();
+        options.put("sweepInterval", "60000");
+        queue = new RedisQueue(CONNECTION_URI, options);
     }
 
     @AfterClass
