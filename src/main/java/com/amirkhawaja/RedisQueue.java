@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -23,16 +24,19 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class RedisQueue implements Closeable {
 
-    private static final String WORKING_QUEUE = "queue:working";
-    private static final String PENDING_QUEUE = "queue:pending";
-    private static final String VALUES_QUEUE = "queue:values";
+    private static final String WORKING_QUEUE = "redisrqs:working";
+    private static final String PENDING_QUEUE = "redisrqs:pending";
+    private static final String VALUES_QUEUE = "redisrqs:values";
 
     private final Map<String, String> commandMap = new ConcurrentHashMap<>(5);
     private final GenericObjectPool<Jedis> redisPool;
+    private final HashMap<String, String> options;
     private final Gson serializer = new GsonBuilder().create();
 
-    public RedisQueue(String uri) {
+    public RedisQueue(String uri, HashMap<String, String> options) {
         redisPool = new GenericObjectPool<>(new RedisConnectionFactory(uri));
+        this.options = options;
+
         loadCommands();
     }
 
@@ -190,7 +194,8 @@ public class RedisQueue implements Closeable {
      */
     public void sweep() {
         final long now = Instant.now().atZone(ZoneId.of("UTC")).toInstant().toEpochMilli();
-        final long interval = 60000;
+        final long interval = options.containsKey("sweepInterval")
+                ? Long.parseLong(options.get("sweepInterval")) : 60000;
         Jedis redis = null;
 
         try {
