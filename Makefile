@@ -1,5 +1,4 @@
 clean_compile:
-	@clear
 	@echo "Cleaning and compiling..."
 	@mvn clean compile
 	@echo "Done.\n\n"
