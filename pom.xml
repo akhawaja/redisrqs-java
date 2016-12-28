@@ -6,6 +6,20 @@
     <artifactId>redisrqs-java</artifactId>
     <version>1.0.1-SNAPSHOT</version>
 
+    <name>redisrqs-java</name>
+
+    <description>A Java library designed to build a very fast queuing system backed by Redis that guarantees
+        at least once and at most once delivery.
+    </description>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <developers>
         <developer>
             <name>Amir Khawaja</name>
