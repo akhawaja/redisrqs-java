@@ -4,7 +4,7 @@
 
     <groupId>com.amirkhawaja</groupId>
     <artifactId>redisrqs-java</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
 
     <url>https://github.com/akhawaja/redisrqs-java</url>
 
@@ -37,7 +37,7 @@
         <connection>scm:git:git://github.com/akhawaja/redisrqs-java.git</connection>
         <developerConnection>scm:git:git@github.com:akhawaja/redisrqs-java.git</developerConnection>
         <url>https://github.com/akhawaja/redisrqs-java</url>
-        <tag>HEAD</tag>
+        <tag>redisrqs-java-1.0.2</tag>
     </scm>
 
     <distributionManagement>
@@ -160,7 +160,7 @@
                 <executions>
                 <execution>
                     <id>attach-javadoc</id>
-                    <goals/>
+                    <goals />
                 </execution>
                 </executions>
             </plugin>
