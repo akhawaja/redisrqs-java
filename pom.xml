@@ -4,7 +4,9 @@
 
     <groupId>com.amirkhawaja</groupId>
     <artifactId>redisrqs-java</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
+
+    <url>https://github.com/akhawaja/redisrqs-java</url>
 
     <name>redisrqs-java</name>
 
