@@ -4,7 +4,7 @@
 
     <groupId>com.amirkhawaja</groupId>
     <artifactId>redisrqs-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <developers>
         <developer>
@@ -21,7 +21,7 @@
         <connection>scm:git:git://github.com/akhawaja/redisrqs-java.git</connection>
         <developerConnection>scm:git:git@github.com:akhawaja/redisrqs-java.git</developerConnection>
         <url>https://github.com/akhawaja/redisrqs-java</url>
-        <tag>redisrqs-java-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
