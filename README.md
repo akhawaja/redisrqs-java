@@ -16,8 +16,17 @@ When using this library, three lists will be created:
 
 Note: There is a [NodeJS version](https://github.com/akhawaja/redisrqs) of this library as well.
 
-# Install
-TODO
+# Installation via Maven
+
+Add the library as a dependency in your pom.xml file:
+
+``` xml
+<dependency>
+  <groupId>com.amirkhawaja</groupId>
+  <artifactId>redisrqs-java</artifactId>
+  <version>1.0.2</version>
+</dependency>
+```
 
 # Quick start
 At this time, this library is not made available in Maven Central. You can build this locally by issuing the command:
@@ -75,4 +84,5 @@ by a UUID. When a message is de-queued, only the UUID is moved from the
 Pending list to the Working list.
 
 # History
+- 1.0.2: Published to Maven Central.
 - 1.0.0: Initial public release.
